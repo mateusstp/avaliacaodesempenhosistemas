@@ -1,0 +1,532 @@
+
+\documentclass[11pt,a4paper]{abntex2}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{makeidx}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{cite} 
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{multirow}
+\lstset{
+	basicstyle = {\footnotesize},
+	numbers=left,
+	firstline=1,
+	language=Java,
+	%frame=leftline|topline,
+	frame=single,
+	tabsize=2,
+	breaklines=true
+}
+
+
+
+%\lstset{
+%language = C++, % Linguagem de programação
+%basicstyle = \footnotesize, % Tamanho da fonte do código
+%numbers = left, % Posição da numeração das linhas
+%numberstyle = \tiny\color{blue}, % Estilo da numeração de linhas
+%stepnumber = 1, % Numeração das linhas ocorre a cada quantas linhas?
+%numbersep = 10pt, % Distância entre a numeração das linhas e o código
+%backgroundcolor = \color{white}, % Cor de fundo
+%showspaces = false, % Exibe espaços com um sublinhado
+%showstringspaces = false, % Sublinha espaços em Strings
+%showtabs = false, % Exibe tabulação com um sublinhado
+%frame = trBL, % Envolve o código com uma moldura, pode ser single ou trBL
+%rulecolor = \color{black}, % Cor da moldura
+%tabsize = 2, % Configura tabulação em x espaços
+%captionpos = b, % Posição do título pode ser t (top) ou b (bottom)
+%breaklines = true, % Configura quebra de linha automática
+%breakatwhitespace= false, % Configura quebra de linha
+%title = \lstname, % Exibe o nome do arquivo incluido
+%caption = \lstname, % Também é possível usar caption no lugar de title
+%keywordstyle = \color{blue}, % Estilo das palavras chaves
+%commentstyle = \color{dkgreen}, % Estilo dos Comentários
+%stringstyle = \color{mauve}, % Estilo de Strings
+%escapeinside = {\%*}{*)}, % Permite adicionar comandos LaTeX dentro do seu código
+%morekeywords     ={*,...} % Se quiser adicionar mais palavras-chave
+%}%
+
+\begin{document}
+	\begin{titlepage}
+		\vfill
+		\begin{center}
+			{\large \textbf{Universidade Federal de Ouro Preto}} \\[2.5cm]
+			
+			  
+			{\large \textbf{Mateus Oliveira dos Santos - 11.2.8093}}\\[4cm]
+			
+			
+			{\Large Trabalho Extra}\\[4cm]
+			
+			\hspace{.45\textwidth} %posiciona a minipage
+			\begin{minipage}{.5\textwidth}
+				\large Trabalho Extra apresentado a disciplina de Avaliação e Desempenho de Sistemas Computacionais do curso de Engenharia de Computação do  Instituto de Ciências Exatas e Aplicadas da  Universidade  Federal de Ouro Preto.\\[1cm]
+				Professor Alexandre Magno de Sousa.
+			\end{minipage}
+			\vfill
+			
+			\vspace{2cm}
+			
+			\large \textbf{João Monlevade - MG}
+			
+			\large \textbf{\date}
+		\end{center}
+	\end{titlepage}	
+	
+\section*{\textbf{Introdução}}
+
+O trabalho extra proposto tem como objetivo consolidar os conhecimentos adquiridos em sala de aula e colocar em prática a análise de modelos de sistemas multiclasse. 
+
+Apresentamos os enunciado proposto, os softwares e a metodologia utilizada, a definição do modelo multiclasse, e logo mais a extração dos dados do problema seguidos das resoluções dos questionamentos do enunciado, seguindo a metodologia proposta. 
+
+\section*{\textbf{Enunciado}}
+	
+	A database server has one CPU and one disk. The server’s workload is composed of trivial queries	that arrive at a rate of 10 tps, complex queries that arrive at a rate of 0.1 tps, and of a batch 	workload that generates a report. When the report generation completes, a new report generation is
+	started in 15 minutes. Table 1 provides workload related information. Each physical I/O demands	0.015 msec of CPU time and 9 msec of disk service time. The last row of Table 1 indicates how much	CPU time is required by transactions of each workload in addition to the CPU time related to I/Os.
+		
+	\begin{itemize}
+		\item What kind of QN should be used to model this situation? Specify the type of workload, resources and network.
+		\item Find the average response time and the average throughput for each of the three workloads.
+		\item Find the utilization of the CPU and of the disk.
+		\item Finds the residence times at the CPU and at the disk for each of the three workloads.
+		
+	\end{itemize}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Data for exercise} 
+		
+		\begin{tabular}{lccc}
+			\toprule
+		 Workload    & Trivial    &Complex    & Report\\
+			\midrule
+		Avg. Number of SQL Calls         & 3.5  & 20.0  & 120.0    \\
+		Avg. Number of I/Os per SQL Call & 5.0  & 15.0 & 40.0   \\
+		DB Buffer Hit Ratio (in \%)      & 70.0 & 80.0   & 30.0     \\
+		Non I/O Related CPU Time (msec)	 & 30.0 & 180.0   & 1250.0    \\
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+			\bottomrule
+		\end{tabular}%
+		%\namedlegend{teste legend}
+		\label{tab:addlabel}%
+	\end{table}%
+	
+\newpage
+
+\section*{\textbf{Software Utilizados}}
+	Segue a lista dos software utilizados para desenvolvimento do trabalho.
+	
+	\begin{itemize}
+	\item  Java Modelling Tools - JMT disponível em \textit{http://jmt.sourceforge.net/Requirements.html}
+	\item IDE Latex TexStudio
+	\end{itemize}
+
+
+
+\section*{\textbf{Metodologia de Resolução}}
+	A metologia utilizada para resolver o problema proposto de modelo multiclasse em questão foi a sugerida na prova de Avaliação e Desempenho de Sistemas pelo Professore Alexandre Magno de Sousa. 
+
+
+	
+	\begin{enumerate}
+	\item  Resolver os submodelos isoladamente, porém analisando o impacto que um infere ou outro;
+	\item  obter as utilizações para o submodelo aberto para cada classe de carga;
+	\item encontrar as utilizações para cada recurso do submodelo aberto(soma das utilizações encontradas);
+	\item encontrar as demandas estendidas para o submodelo fechado;
+	\item utilizar algoritmo de MVA para encontrar o throughput, tempo de respora e tamanho da fila para o modelo fechado;
+	\item calcular o tempo de residência para cada classe de transação do submodelo aberto;
+	\item calcular o tempo de resposta para cada classe de transação.  
+	\end{enumerate}
+	
+
+\section*{\textbf{Definição do Modelo} }
+
+Estação seção dedica-se a resolução passo-a-passo do problemas proposto.
+		\begin{itemize}
+			\item \textbf{TipoQN:} Mista
+			\item \textbf{Recursos:} 1 CPU e 1 Disco
+			\item \textbf{Carga:} Heterogênia
+			\item \textbf{Rede:} Aberta e Fechada
+		\end{itemize}
+% % % % % % % % % % %  falta figura % % % % % % % % % % % % % % % %		
+	
+	
+	
+		
+\section*{\textbf{Extração de dados do problema}}	
+
+Devemos seguir a metodologia para encontrar o tempo médio de resposta, o tempo de residêcia, as utilizações e througput solicitados no enunciado.
+
+Temos que $S_{cpu}=0.000015$ e $S_{disco}=0.009$.
+
+
+
+Dados inferidos com base no contexto do problema proposto. Os subscritos \textit{t}, \textit{c} e \textit{r}, respectivamente são \textit{trivial}, \textit{complex} e \textit{report}. O $\delta$ é o tipo de transação e o $\psi$ quando usado representa o recurso. Os sobrescritos \textit{IO}, \textit{Hit}, \textit{B}, \textit{T} e \textit{e} respectivamente são referência a acesso a disco, referência acessos no \textit{buffer}, carga \textit{batch}, carga de transação e demanda estendida.
+
+\begin{table}[htbp]
+\centering
+\caption{Dados problema} 
+\begin{tabular}{lccc}
+	\toprule
+	Equações    & Trivial    & Complex    & Report\\
+	\midrule
+	$\lambda_{\delta}$       & $\lambda_{t} = 10 tps$ & $\lambda_{c} = 0.1 tps$  & ?\\[3pt]
+	$V_{(cpu,\delta)}$ & $V_{(cpu,t)}=?$  & $V_{(cpu,c)}=?$ & $V_{(cpu,r)}=?$   \\[3pt]
+	$V_{(disco,\delta)}=SqlCall*\frac{IO}{SqlCall}*P^{IO}_{\delta}$ & $V_{(disco,t)}=5.25$ & $V_{(disco,c)}=60.0$   & $V_{(disco,r)}=3360.0$ \\[3pt]
+	$P^{Hit}_{\delta}$ & $P^{Hit}_{t}=0.7$ & $P^{Hit}_{c}=0.8$ & $P^{Hit}_{r}=0.3$ \\[3pt]
+	$P^{IO}_{\delta}$  & $P^{IO}_{t}=0.3$  & $P^{IO}_{c}=0.2$  & $P^{IO}_{r}=0.7$   \\[3pt]
+	%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+	\bottomrule
+\end{tabular}%
+%\namedlegend{teste legend}
+\label{tab:addlabel}%
+\end{table}%
+
+\section*{\textbf{Resolvendo o submodelo aberto}}
+
+Cálculo da demanda de CPU:
+
+\begin{equation}
+D^{IO}_{(cpu,\delta)} =V_{(cpu,\delta)} * S_{cpu} *P^{IO}_{\delta}
+\end{equation}
+
+\begin{equation}
+D_{(cpu,\delta)} = D^{IO}_{(cpu,\delta)} + D^{Hit}_{(cpu,\delta)}
+\end{equation}
+
+O $D^{Hit}_{(cpu,\delta)}$ é dado pela última linha da tabela 1.
+
+ 
+\begin{table}[htbp]
+	\centering
+	\caption{Demandas de CPU por transação} 
+	\begin{tabular}{lccc}
+	\toprule
+	Carga & $D^{Hit}_{(cpu,\delta)}$ & $D^{IO}_{(cpu,\delta)}$ & $D_{(cpu,\delta)}$\\
+		\midrule
+	    Trivial (s)& 0.030 & $0.07875*10^{-3}$ & $30.07875*10^{-3}$\\[3pt]
+		Complex (s)& 0.180 & $0.9*10^{-3}$     & $180.9*10^{-3}$   \\[3pt]
+		Report (s) & 1.250 & $50.4*10^{-3}$    & $130.04*10^{-3}$ \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+Cálculo da demanda de Disco:
+
+\begin{equation}
+D_{(disco,\delta)} =V_{(disco,\delta)} * S_{disco}
+\end{equation}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Demandas de Disco por transação} 
+	\begin{tabular}{lc}
+		\toprule
+		Carga      & $D_{(dsico,\delta)}$\\
+		\midrule
+		Trivial (s)& 0.04725 \\[3pt]
+		Complex (s)& 0.540 \\[3pt]
+		Report (s) & 30.24 \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+
+Cálculo para utilização do disco e da CPU para o submodelo aberto
+
+\begin{equation}
+U_{(\psi,\delta)} =D_{(\psi,\delta)} * \lambda_{\delta}
+\end{equation}
+
+\begin{equation}
+U^{T}_{\psi} = \sum_{\delta=0}^{K} U_{(\psi,\delta)}
+\end{equation}
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Utilização do submodelo aberto} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga      & $U_{(disco,\delta)}$& $U_{(cpu,\delta)}$ \\
+		\midrule
+		Trivial (s)            & 0.4725 & 0.3007875\\[3pt]
+		Complex (s)            & 0.054  & 0.01809\\[3pt]
+		$U^{T}_{\psi}$ & 0.5265 & 0.32609 \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+Temos que o tamanho total da fila por recurso é dado por,
+
+\begin{equation}
+N^{T}_{\psi} = \frac{U^{T}_{\psi}}{1 - U^{T}_{\psi}}
+\end{equation}
+
+Logo podemos calcular o tamanho da fila para cada tipo de transação como um percente do tamanho total. Portanto,
+
+\begin{equation}
+N^{T}_{(\psi,\delta)} = N^{T}_{\psi}*\frac{U^{T}_{(\psi,\delta)}}{U^{T}_{\psi}}
+\end{equation}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tamanho da Fila CPU e Disco - Complex e Trivial} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga            & CPU    & Disco \\
+		\midrule
+		$N^{T}_{(\psi,t)}$ & 0.44627 & 0.99788\\[3pt]
+		$N^{T}_{(\psi,c)}$ & 0.02684 & 0.11404\\[3pt]
+		$N^{T}_{\psi}$   & 0.48387 & 1.11193 \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+
+
+Agora já podemos calcular o tempo de residência de cada carga do sistema aberto pois,
+
+\begin{equation}
+R^{T}_{(\psi,\delta)} = \frac{N^{T}_{(\psi,\delta)}}{\lambda_{\delta}}
+\end{equation}
+
+Logo,
+
+\begin{equation}
+R^{T}_{\delta} = \sum_{\psi=0}^{K} R^{T}_{(\psi,\delta)}
+\end{equation}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tempo de Residência submodelo aberto - CPU e Disco} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga              & CPU     & Disco     & $R^{T}_{\delta}$ \\
+		\midrule
+		$R^{T}_{(\psi,t)}$ & 0.044627 & 0.099788 & 0.14442  \\[3pt]
+		$R^{T}_{(\psi,c)}$ & 0.2684   & 1.1404   & 1.4088 \\[3pt]
+		   
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:TR_t}%
+\end{table}%
+
+Recalculando os valores ao final da resolução do submodelo aberto temos:
+
+\begin{equation}
+V{(\psi,\delta)} = \frac{D_{(\psi,\delta)}}{S_{\psi}}
+\end{equation}
+
+
+\begin{table}[htbp]
+\centering
+\caption{Dados do Problema Recalculado} 
+\begin{tabular}{lccc}
+	\toprule
+	Equações    & Trivial    & Complex    & Report\\
+	\midrule
+	$\lambda_{\delta}$       & $\lambda_{t} = 10 tps$ & $\lambda_{c} = 0.1 tps$  & ?\\[3pt]
+	$V_{(cpu,\delta)}$ & $V_{(cpu,t)}=2005$  & $V_{(cpu,c)}=12060$ & $V_{(cpu,r)}=86693.33$   \\[3pt]
+	$V_{(disco,\delta)}=SqlCall*\frac{IO}{SqlCall}*P^{IO}_{\delta}$ & $V_{(disco,t)}=5.25$ & $V_{(disco,c)}=60.0$   & $V_{(disco,r)}=3360.0$ \\[3pt]
+	$P^{Hit}_{\delta}$ & $P^{Hit}_{t}=0.7$ & $P^{Hit}_{c}=0.8$ & $P^{Hit}_{r}=0.3$ \\[3pt]
+	$P^{IO}_{\delta}$  & $P^{IO}_{t}=0.3$  & $P^{IO}_{c}=0.2$  & $P^{IO}_{r}=0.7$   \\[3pt]
+	%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+	\bottomrule
+\end{tabular}%
+\end{table}
+
+\section*{\textbf{Resolvendo o submodelo \textit{batch}}}
+
+Para calcular a demanda do modelo \textit{batch} temos que calcular a demanda estendida do modelo fechado. Este calculo é necessário pois modelo de transação impacta no modelo fechado, está é uma abordagem para resolver modelos multiclasse.
+
+\begin{equation}
+	D^{e}_{(\psi,batch)} = \frac{D_{(\psi,batch)}}{1 - U^{T}_{\psi}}
+\end{equation}
+
+\begin{equation}
+	D^{e}_{(cpu,r)} = 1.92963
+\end{equation}
+
+\begin{equation}
+	D^{e}_{(dsico,r)} = 63.8664
+\end{equation}
+ 
+Agora podemos utilizaremos o módulo Java Modelling Tools - JMT que utiliza o algoritmo MVA para encontrar o tamanho da fila e o throughput do sistema fechado. Como exemplo a diferenção do tempo de resposta analisado para a carde de transação \textit{complex} com influência do modelo \textit{batch} é aproximandamente 55\% maior que desconsiderando o impacto. 
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tamanho da Fila -  Report} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga       & CPU    & Disco \\
+		\midrule
+		$N^{B}_{\psi}$ & 0.02902 & 0.97097\\[3pt]
+		$X^{B}_{cpu}$ & 0.02    &   \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+Com estamos resolvendo o sistema fechado isoladamente ele não experimenta fila logo, uma solução por MVA  temos,
+
+\begin{equation}
+R_{\psi} = V_{\psi}*S_{\psi} = D_{\psi}
+\end{equation}
+
+Assim temos que o tempo de residência para carga \textit{batch},
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tempo de Residência -  Report} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga       & CPU    & Disco & Total \\
+		\midrule
+		$R^{B}_{\psi}$ & 1.92963 & 63.8664 & 65.79603 \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:TR_b}%
+\end{table}%
+
+
+
+
+\section*{\textbf{Resolvendo submodelo aberto com influência do submodelo fechado}}
+
+Para encontrar o tempo de resposta do submodelo aberto devemos considera também o impacto do submodelo fechado.
+Portanto temos que o tempo de residência é dado por,
+
+\begin{equation}
+R^{'}_{(\psi,\delta)} = D_{(\psi,\delta)}*(1 + N_{(\psi,batch)})*\frac{1}{(1 - U_{(\psi,\delta)})}
+\end{equation} 
+
+\begin{equation}
+R_{\delta} = \sum_{\psi =1}^{K} R^{'}_{(\psi,\delta)} 
+\end{equation} 
+
+onde $\delta \in$ \textit{\textbf{transações}}.
+
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tempo Médio de Resposta submodelo aberto com impacto batch} 
+	\begin{tabular}{lccc}
+		\toprule
+		Carga                    & Trivial  & Complex \\
+		\midrule
+		$R^{'}_{(cpu,\delta)}$   &  0.04592 & 0.27402 \\[3pt]
+		$R^{'}_{(dsico,\delta)}$ &  0.19668 & 2.24778\\[3pt]
+		$R_{\delta}$             &  0.2426  & 2.5218 \\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:TMR_t}%
+\end{table}%
+
+Como o tempo de resposta mudou o número de tarefas no recurso também se altera. Temos que,
+
+\begin{equation}
+N^{T}_{\psi} = \sum_{\delta}^{T} \lambda_{\delta}*R_{(\psi,\delta)}
+\end{equation}
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{Tamanho da Fila -  Transações} 
+	\begin{tabular}{lcc}
+		\toprule
+		Carga          & CPU    & Disco \\
+		\midrule
+		$N^{T}_{\psi}$ & 0.48660 & 2.19157\\[3pt]
+		%\multicolumn{7}{l}{\textit{caption fonte wwww}} \\
+		\bottomrule
+	\end{tabular}%
+	%\namedlegend{teste legend}
+	\label{tab:addlabel}%
+\end{table}%
+
+
+\section*{\textbf{Tempo de Resposta, Tempo de Residncia }}
+
+ O tempo médio de resposta para o modelo aberto se encontra na tabela [\ref{tab:TMR_t}] e para o modelo fechado na tabela [\ref{tab:TR_b}] que é o mesmo que o tempo de residência. O tempo de residência para o modelo fechado segue na tabela [\ref{tab:TR_t}].
+
+O throughput para carga batch é defino como,
+
+\begin{equation}
+X_{0} = \frac{N}{R + Z}
+\end{equation}
+
+Como $N=1$ pois só temos um serviço de gerar relatório em execução. O tempo de pensar é dado no problema como 15 minutos logo $Z = 15*60 = 900 s$. O tempo médio de resposta já está calculo na tabela [\ref{tab:trR}], $R=65.79603$. Logo $X_{batch}= 0.0010354 tps$, já dados $X_{t}=10.0 tps$ e $X_{c}=0.1 tps$ . 
+
+\section*{\textbf{Utilização}}
+
+Temos que,
+
+\begin{equation}
+U_{\psi}  = U^{T}_{\psi} + U^{batch}_{\psi}
+\end{equation}
+
+Dado que $U^{T}_{cpu}=0.32609$  e $U^{T}_{disco}=0.5265$ e
+
+\begin{equation}
+U_{\psi}  = X_{0}* D_{\psi}
+\end{equation}
+
+temos que,
+\begin{equation}
+U^{batch}_{cpu} = X_{batch}* D^{e}_{(cpu,batch)} = 0.0010354 *1.92963=0.00199 
+\end{equation}
+
+\begin{equation}
+   U^{batch}_{disco} = X_{batch}* D^{e}_{(disco,batch)} = 0.0010354*63.8664=0.06612 
+\end{equation}
+
+Logo,$U_{cpu} \approx 0.32808 \approx 32.80\% $ e  $U_{disco} \approx 0.59262 \approx 59.26\% $.
+
+
+\section*{\textbf{Conclusão}}
+
+Por meio do trabalho proposto, podemos reafirmar que em uma análise de modelo multiclasse o impacto que os submodelos geram um no outro não pode ser ignorado, haja vista que o tempo de respota para a classe aberta da carga \textit{complex} \´{e} aproximadamente 55\% maior que o tempo de resposta sem considerar o impacto do modelo fechado.
+
+	%\begin{figure}[H]
+%		\centering%
+%		\includegraphics[scale=0.50]{geral.png}
+%		\caption{Diagrama Projeto TP1}
+%		\label{fig:geraltp1}
+%	\end{figure}
+
+\section*{\textbf{Bibliografia}}
+JAIN, Raj. The Art of Computer System
+Performance Analysis. EUA: John Wiley &
+Sons, 1991.
+
+	
+\end{document}
