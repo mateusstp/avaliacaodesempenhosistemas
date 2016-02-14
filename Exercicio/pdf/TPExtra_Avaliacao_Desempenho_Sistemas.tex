@@ -86,6 +86,7 @@
 	
 	
 \chapter{Enunciado}
+\label{enunciado}
 %\section{\textbf{Enunciado}}
 	
 	1. Um servidor de banco de dados possui uma CPU e dois discos, o monitor de desempenho do SGBD, que realiza medições em nível de transações, gerou um log de atividades dos recursos do sistema para cada transação que ocorreram em um intervalo de 2 minutos e meio. Ao todo 200 transações foram registradas nesse período de tempo conforme os dados da planilha anexa “DBMS-Performance-Monitor-Log.xls” (tempo de CPU e número de I/Os para cada disco, além do ID para cada transação). Para realizar a caracterização do workload do servidor, faça o que se pede:
@@ -130,20 +131,60 @@
 	\end{table}%
 
 \textbf{Observação:} para criação dos gráficos CDF e Box Plot, que não foram apresentados na disciplina, realize uma pesquisa em estatística para ter conhecimento de como se constrói esse tipo de gráfico.
+
+\chapter{Introdução}	
+
+O trabalho apresenta a resolução do problema proposto na seção de enunciado \ref{enunciado}. A seção \ref{qe} apresenta as observações e conclusões obtidas a partir da análise dos dados resultantes das seções de \ref{qa} a  \ref{qd}. As seções seguem a ordem da resolução do problema proposto, exceto pela questão \textbf{e} que será a primeira a ser apresentada.
 	
 \chapter{Análise dos resultados - Questão E}
-	
-	
+\label{qe}
+Apresentaremos as conclusões e observações de acordo com a sequencia de resolução das questões.
+\section{Questão A}
+\label{qea}
+As tabelas \ref{tab:dadosestat} e \ref{tab:dados} apresentam os dados estatísticos do problema e os dados reais parciais, para acesso aos dados completos acesse o repositório do git citado em \ref{qas}. Como esperado os dados normalizados possuem média zero e desvio padrão um. Além dos somatórios igual a zero das componentes normalizadas e dos fatores do PCA. As observações dos gráficos explicaram melhor o que cada resultado significa na seção \ref{qeb}.
+
+\section{Questão B}
+\label{qeb}
+
+Analisando os histogramas na seção \ref{qbh} podemos observar que as concentrações de cargas que tomam maior de tempo de cpu se encontram entre 75 ms e 172ms, e uma segunda carga aparentemente média entre 412 ms e 508ms.
+Para o disco 1 a maioria das transações, cerca de 50,  executam aproximadamente 16 IOs enquanto que para o disco 2 são 30 IOs por transação, com uma frequência igual ao disco 1. No disco um as demais transações estão mais distribuídas, enquanto que no disco 2 as transações com maior quantidade de IOs estão entre 64 e 80 IOs por transação.
+
+Ao se observar os gráficos das CDFs \ref{qbcdf} podemos  fornecer um dado mais preciso, onde cerca de $60\%$ das operações na CPU  gastam aproximadamente 400ms de tempo de CPU.
+No disco 1 apenas $30\%$ das transações fazem até 30 IOs , já no disco 2 aproximadamente $26\%$ das transações fazem até 40 IOs.
+
+ Com o box plot conseguimos entender melhor as curvas das CDFs dos disco, como podemos ver no gráfico da figura \ref{fig:boxplotd1d2} enquanto do disco 1 apresenta maior variabilidade entre o primeiro quartil e a mediana, o disco 2 é o oposto. Apesar dos máximos e mínimos estarem próximos os tipo de carga que cada disco recebe varia claramente em número de IOs, ou seja, o disco dois recebem operações que fazem mais IOs que o disco 1.
+ 
+ O box plot do CPU \ref{fig:boxplotcpu} mostra que a maior parte das operações tem variabilidade em tempo de CPU entre a mediana e o terceiro quartil.
+
+
+
+\section{Questão C}
+\label{qec}
+
+Realizando o PCA encontramos que o principal fator 1 é o disco 1, com cercar de $58\%$ de representação dos dados e o principal fator 2 é a CPU, com cercar de $35\%$ de representação dos dados. Logo, o disco 2 com aproximadamente $7\%$.
+
+Observando o gráfico \ref{fig:pca} podemos observar que, apesar de uma dispersão próximo ao valor dois do principal fator 2 (CPU), a maior parte dos dados se concentram ao longo do eixo do principal fator 1 (Disco 1 ). De certa forma, era de se esperar que o principal fator 1 tinha grande chances de ser um dos disco por se tratar de um sistema de banco de dados.
+
+
+\section{Questão D}
+\label{qed}
+
+Por fim, observando o gráfico \ref{fig:pcacomp} onde o eixo x é o principal fator 1 e o eixo y é o principal fator 2, podemos observar que o disco 1 realmente se aproxima do eixo do principal fator 1 e a CPU idem ao eixo y. O disco 2, como analisado no PCA representa pouco os dados, e o gráfico \ref{fig:pcacomp} evidencia esse fato, o ponto disco 2 está disperso do eixo x e do eixo y, confirmando os resultados obtido pelo PCA.
+
+
 \chapter{Dados -Questão A}
+\label{qa}
+
 
 \section{\textbf{Software Utilizados}}
+\label{qas}
 	Para o desenvolvimento do trabalho utilizamos o software editor de planilhas OpenOffice Calc e o Calcular autovalores e autovetores de uma matriz do Wolfram Alpha\cite{img}.
 	Todos os dados estão disponíveis no repositório \textit{https://github.com/mateusstp/avaliacaodesempenhosistemas}.
 
 
 
 \section{\textbf{Dados do problema e dados estatísticos }}
-
+\label{qade}
 %\begin{landscape}
 	
 	\begin{table}[H]
@@ -171,7 +212,7 @@
 			Variância & 27510,420 & 728,718 & 698,091 & - & 1,000 & 1,000 & 1,000 & 1,042 & 1,749 & 0,209 \\ \hline
 			Desvio Padrão & 165,863 & 26,995 & 26,421 & - & 1,000 & 1,000 & 1,000 & 1,021 & 1,323 & 0,457 \\ \hline
 		\end{tabular}
-		\label{dados}
+		\label{tab:dados}
 	\end{table}
 %\end{landscape}
 
@@ -191,15 +232,15 @@
 		\textbf{3º Quartil} & 418,052 & 72,000 & 68,000 \\ \hline
 		\textbf{Mediana} & 151,625 & 63,000 & 39,000 \\ \hline
 	\end{tabular}
-	\label{dadosestat}
+	\label{tab:dadosestat}
 \end{table}
 
 
 \chapter{Gráficos - Questão B}
 %\section{\textbf{Gráficos  - Questão b}}
-
+\label{qb}
 \section{\textbf{Histogramas}}
-
+\label{qbh}
 \begin{figure}[H]
 	\begin{minipage}[b]{0.45\linewidth}
 		\centering
@@ -247,7 +288,7 @@
 %	\end{figure}
 	
 \section{\textbf{CDF }}
-
+\label{qbcdf}
 \begin{figure}[H]
 	\begin{minipage}[b]{0.45\linewidth}
 		\centering
@@ -294,6 +335,7 @@
 %	\end{figure}
 	
 \section{\textbf{Box Plot}}
+\label{qbboxp}
 \begin{figure}[H]
 	\begin{minipage}[b]{0.45\linewidth}
 		\centering
@@ -331,7 +373,7 @@
 
 
 \chapter{Análise do Componente Principal - Questão C}
-
+\label{qc}
 %\section*{\textbf{Análise do Componente Principal - Questão c}}
 
 \begin{table}[H]
@@ -346,7 +388,7 @@
 				-0,631 & 0,209  & 0,747 \\ 
 				\bottomrule
 			\end{tabular}
-			\label{autovetores}	
+			\label{tab:autovetores}	
 		\end{minipage}
 		\hspace{0.5cm}
 		\begin{minipage}[b]{0.45\linewidth}
@@ -361,7 +403,7 @@
 				\bottomrule
 			\end{tabular}%
 			%\namedlegend{teste legend}
-			\label{tab:correlacao}%
+			\label{tab:matrizcorrelacao}%
 			
 		\end{minipage}
 \end{table}%
@@ -425,7 +467,7 @@
 		\hline
 		\textbf{Porcentagem de cada fator} & 34,74\% & 58,31\% & 6,95\% \\ \hline
 	\end{tabular}
-	\label{porcentagenpca}
+	\label{tab:porcentagenpca}
 \end{table}
 
 
@@ -437,7 +479,9 @@
 	\end{figure}
 
 
-\chapter{Conclusão - Questão D}
+\chapter{Correlação PCAs e Componentes - Questão D}
+\label{qd}
+
 \begin{table}[H]
 	\caption{Correlação PCA e Componentes}
 	\centering
@@ -448,7 +492,7 @@
 		$R_{(d1,yi)}$  & -0,902       & -0,189 \\ \hline
 		$R_{(d2,yi)}$  & -0,882       & -0,865 \\ \hline
 	\end{tabular}
-	\label{pcaconponentes}
+	\label{tab:pcaconponentes}
 \end{table}
 
 	\begin{figure}[H]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.11)  14 FEB 2016 12:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.11)  14 FEB 2016 13:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,11 +956,7 @@ or  <return>  to continue without it.
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-(./TPExtra_Avaliacao_Desempenho_Sistemas.aux
-
-LaTeX Warning: Label `tab:correlacao' multiply defined.
-
-)
+(./TPExtra_Avaliacao_Desempenho_Sistemas.aux)
 \openout1 = `TPExtra_Avaliacao_Desempenho_Sistemas.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
@@ -979,7 +975,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
 LaTeX Font Info:    ... okay on input line 59.
 \AtBeginShipoutBox=\box36
 Package hyperref Info: Link coloring OFF on input line 59.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1065,301 +1062,304 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.134 \chapter
-              {Análise dos resultados - Questão E}] [3
+l.135 \chapter
+              {Introdução}] [3
 
-]
+] [4
+
+] [5]
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <6.57005> not available
-(Font)              size <7> substituted on input line 151.
+(Font)              size <7> substituted on input line 192.
 
-LaTeX Font Info:    Calculating math sizes for size <6.57005> on input line 153
+LaTeX Font Info:    Calculating math sizes for size <6.57005> on input line 194
 .
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.57005> not available
-(Font)              size <7> substituted on input line 153.
+(Font)              size <7> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.59901> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.28502> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.57005> not available
-(Font)              size <7> substituted on input line 153.
+(Font)              size <7> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.59901> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.28502> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.57005> not available
-(Font)              size <7> substituted on input line 153.
+(Font)              size <7> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.59901> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.28502> not available
-(Font)              size <5> substituted on input line 153.
+(Font)              size <5> substituted on input line 194.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <6.57005> not available
-(Font)              size <7> substituted on input line 155.
+(Font)              size <7> substituted on input line 196.
 
 
-Overfull \hbox (37.07845pt too wide) in paragraph at lines 153--175
+Overfull \hbox (37.07845pt too wide) in paragraph at lines 194--216
  [][] 
  []
 
-[4
+[6
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.3.2}) h
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.198 \chapter
+l.239 \chapter
               {Gráficos - Questão B}pdfTeX warning (ext4): destination with t
-he same identifier (name{table.3.3}) has been already used, duplicate ignored
+he same identifier (name{table.4.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.198 \chapter
+l.239 \chapter
               {Gráficos - Questão B}]
-<histogramacpu.png, id=55, 455.45157pt x 256.70906pt>
+<histogramacpu.png, id=90, 455.45157pt x 256.70906pt>
 File: histogramacpu.png Graphic file (type png)
  <use histogramacpu.png>
-Package pdftex.def Info: histogramacpu.png used on input line 206.
+Package pdftex.def Info: histogramacpu.png used on input line 247.
 (pdftex.def)             Requested size: 204.74861pt x 115.4044pt.
 
-<histogranadsico.png, id=56, 455.45157pt x 256.70906pt>
+<histogranadsico.png, id=91, 455.45157pt x 256.70906pt>
 File: histogranadsico.png Graphic file (type png)
 
 <use histogranadsico.png>
-Package pdftex.def Info: histogranadsico.png used on input line 213.
+Package pdftex.def Info: histogranadsico.png used on input line 254.
 (pdftex.def)             Requested size: 204.74861pt x 115.4044pt.
 
-Underfull \hbox (badness 2334) in paragraph at lines 214--214
+Underfull \hbox (badness 2334) in paragraph at lines 255--255
 [][]\T1/cmr/m/n/10.95 Histograma Disco 1 com 10
  []
 
-<histogramadsic2.png, id=57, 455.45157pt x 256.70906pt>
+<histogramadsic2.png, id=92, 455.45157pt x 256.70906pt>
 File: histogramadsic2.png Graphic file (type png)
 
 <use histogramadsic2.png>
-Package pdftex.def Info: histogramadsic2.png used on input line 220.
+Package pdftex.def Info: histogramadsic2.png used on input line 261.
 (pdftex.def)             Requested size: 204.74861pt x 115.4044pt.
 
-Underfull \hbox (badness 2334) in paragraph at lines 221--221
+Underfull \hbox (badness 2334) in paragraph at lines 262--262
 [][]\T1/cmr/m/n/10.95 Histograma Disco 2 com 10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--224
+Underfull \hbox (badness 10000) in paragraph at lines 245--265
 [][]   []
  []
 
-<cdfcpu.png, id=58, 455.45157pt x 255.95625pt>
+<cdfcpu.png, id=93, 455.45157pt x 255.95625pt>
 File: cdfcpu.png Graphic file (type png)
  <use cdfcpu.png>
-Package pdftex.def Info: cdfcpu.png used on input line 254.
+Package pdftex.def Info: cdfcpu.png used on input line 295.
 (pdftex.def)             Requested size: 204.74861pt x 115.06598pt.
 
-<cdfdisco1.png, id=59, 454.69875pt x 255.95625pt>
+<cdfdisco1.png, id=94, 454.69875pt x 255.95625pt>
 File: cdfdisco1.png Graphic file (type png)
  <use cdfdisco1.png>
-Package pdftex.def Info: cdfdisco1.png used on input line 261.
+Package pdftex.def Info: cdfdisco1.png used on input line 302.
 (pdftex.def)             Requested size: 204.74861pt x 115.25735pt.
 
-<cdfdisco2.png, id=60, 454.69875pt x 255.95625pt>
+<cdfdisco2.png, id=95, 454.69875pt x 255.95625pt>
 File: cdfdisco2.png Graphic file (type png)
  <use cdfdisco2.png>
-Package pdftex.def Info: cdfdisco2.png used on input line 268.
+Package pdftex.def Info: cdfdisco2.png used on input line 309.
 (pdftex.def)             Requested size: 204.74861pt x 115.25735pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--272
+Underfull \hbox (badness 10000) in paragraph at lines 293--313
 [][]   []
  []
 
-[5
+[7
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) 
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.274 
+l.315 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
-4.2}) has been already used, duplicate ignored
+5.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.274 
+l.315 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
-4.3}) has been already used, duplicate ignored
+5.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.274 
+l.315 
        <./histogramacpu.png (PNG copy)> <./histogranadsico.png (PNG copy)> <./h
 istogramadsic2.png (PNG copy)>]
-<boxplotcpu.png, id=70, 455.45157pt x 255.20343pt>
+<boxplotcpu.png, id=105, 455.45157pt x 255.20343pt>
 File: boxplotcpu.png Graphic file (type png)
  <use boxplotcpu.png>
-Package pdftex.def Info: boxplotcpu.png used on input line 300.
+Package pdftex.def Info: boxplotcpu.png used on input line 342.
 (pdftex.def)             Requested size: 204.74861pt x 114.72755pt.
 
-<boxplotdiscos.png, id=71, 454.69875pt x 256.70906pt>
+<boxplotdiscos.png, id=106, 454.69875pt x 256.70906pt>
 File: boxplotdiscos.png Graphic file (type png)
  <use boxplotdiscos.png>
-Package pdftex.def Info: boxplotdiscos.png used on input line 307.
+Package pdftex.def Info: boxplotdiscos.png used on input line 349.
 (pdftex.def)             Requested size: 204.74861pt x 115.59634pt.
 
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}
+[8pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 \chapter
+l.375 \chapter
               {Análise do Componente Principal - Questão C}pdfTeX warning (ex
-t4): destination with the same identifier (name{figure.4.5}) has been already u
+t4): destination with the same identifier (name{figure.5.5}) has been already u
 sed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 \chapter
+l.375 \chapter
               {Análise do Componente Principal - Questão C}pdfTeX warning (ex
-t4): destination with the same identifier (name{figure.4.6}) has been already u
+t4): destination with the same identifier (name{figure.5.6}) has been already u
 sed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 \chapter
+l.375 \chapter
               {Análise do Componente Principal - Questão C}pdfTeX warning (ex
-t4): destination with the same identifier (name{figure.4.7}) has been already u
+t4): destination with the same identifier (name{figure.5.7}) has been already u
 sed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 \chapter
+l.375 \chapter
               {Análise do Componente Principal - Questão C}pdfTeX warning (ex
-t4): destination with the same identifier (name{figure.4.8}) has been already u
+t4): destination with the same identifier (name{figure.5.8}) has been already u
 sed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.333 \chapter
+l.375 \chapter
               {Análise do Componente Principal - Questão C} <./cdfcpu.png (PN
 G copy)> <./cdfdisco1.png (PNG copy)> <./cdfdisco2.png (PNG copy)> <./boxplotcp
 u.png (PNG copy)> <./boxplotdiscos.png (PNG copy)>]
-<pca.png, id=83, 567.62062pt x 347.04657pt>
+<pca.png, id=115, 567.62062pt x 347.04657pt>
 File: pca.png Graphic file (type png)
  <use pca.png>
-Package pdftex.def Info: pca.png used on input line 434.
+Package pdftex.def Info: pca.png used on input line 476.
 (pdftex.def)             Requested size: 340.57498pt x 208.22954pt.
- [7
+ [9
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.5.4}) h
+pdfTeX warning (ext4): destination with the same identifier (name{table.6.4}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \chapter
-              {Conclusão - Questão D}pdfTeX warning (ext4): destination with 
-the same identifier (name{table.5.5}) has been already used, duplicate ignored
+l.482 \chapter
+              {Correlação PCAs e Componentes - Questão D}pdfTeX warning (ext
+4): destination with the same identifier (name{table.6.5}) has been already use
+d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \chapter
-              {Conclusão - Questão D}pdfTeX warning (ext4): destination with 
-the same identifier (name{table.5.6}) has been already used, duplicate ignored
+l.482 \chapter
+              {Correlação PCAs e Componentes - Questão D}pdfTeX warning (ext
+4): destination with the same identifier (name{table.6.6}) has been already use
+d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \chapter
-              {Conclusão - Questão D}pdfTeX warning (ext4): destination with 
-the same identifier (name{table.5.7}) has been already used, duplicate ignored
+l.482 \chapter
+              {Correlação PCAs e Componentes - Questão D}pdfTeX warning (ext
+4): destination with the same identifier (name{table.6.7}) has been already use
+d, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \chapter
-              {Conclusão - Questão D}pdfTeX warning (ext4): destination with 
-the same identifier (name{figure.5.9}) has been already used, duplicate ignored
-
+l.482 \chapter
+              {Correlação PCAs e Componentes - Questão D}pdfTeX warning (ext
+4): destination with the same identifier (name{figure.6.9}) has been already us
+ed, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.440 \chapter
-              {Conclusão - Questão D} <./pca.png (PNG copy)>]
-<relacao.png, id=95, 455.45157pt x 255.95625pt>
+l.482 \chapter
+              {Correlação PCAs e Componentes - Questão D} <./pca.png (PNG co
+py)>] <relacao.png, id=125, 455.45157pt x 255.95625pt>
 File: relacao.png Graphic file (type png)
  <use relacao.png>
-Package pdftex.def Info: relacao.png used on input line 456.
+Package pdftex.def Info: relacao.png used on input line 500.
 (pdftex.def)             Requested size: 364.36174pt x 204.76526pt.
- [8
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.6.8}) h
+[10
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.7.8}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.475 	\begin{thebibliography}{1}
+l.519 	\begin{thebibliography}{1}
                                  pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.6.10}) has been already used, duplicate ignored
+me identifier (name{figure.7.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.475 	\begin{thebibliography}{1}
+l.519 	\begin{thebibliography}{1}
                                   <./relacao.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\uppercase' on input line 475.
+(hyperref)                removing `\uppercase' on input line 519.
 
 bibitemlist
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--490
+Underfull \hbox (badness 10000) in paragraph at lines 531--534
 []\T1/cmr/bx/n/10.95 Equipe IGM\T1/cmr/m/n/10.95 .  C�l-culo de au-to-va-lo-res
  e au-to-ve-to-res.  \T1/cmr/m/it/10.95 dis-po-n�-vel em
  []
 
 
-Overfull \hbox (18.68456pt too wide) in paragraph at lines 487--490
+Overfull \hbox (18.68456pt too wide) in paragraph at lines 531--534
 \T1/cmr/m/it/10.95 http://www.igm.mat.br/aplicativos/index.php?option=com_conte
 nt&view=article&id=754:auto-
  []
 
-[9
+[11
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 540.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 540.
  (./TPExtra_Avaliacao_Desempenho_Sistemas.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 496.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 540.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 540.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.71498pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 540.
  ) 
 Here is how much of TeX's memory you used:
- 12870 strings out of 495004
- 181905 string characters out of 6180661
+ 12898 strings out of 495004
+ 182126 string characters out of 6180661
  421687 words of memory out of 5000000
- 15880 multiletter control sequences out of 15000+600000
+ 15901 multiletter control sequences out of 15000+600000
  17992 words of font info for 43 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  39i,11n,40p,667b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1384,11 +1384,11 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on TPExtra_Avaliacao_Desempenho_Sistemas.pdf (9 pages, 375679 by
-tes).
+Output written on TPExtra_Avaliacao_Desempenho_Sistemas.pdf (11 pages, 397553 b
+ytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 670 PDF objects out of 1000 (max. 8388607)
+ 240 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 187 words of extra memory for PDF output out of 10000 (max. 10000000)
 
